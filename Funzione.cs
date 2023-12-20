@@ -57,6 +57,18 @@ namespace DisegnoFunzione
                 x1 = - q / m;
                 passaggi[1]++;
             }
+            return x1;
+        }
+        public double Secante(double xA, double xB, double epsilon)
+        {
+            double x0 = xA;
+            double x1; 
+            while (Trovato(x0, x1, epsilon) == true || passaggi[1] > 1000)
+            {
+                x1 = x0 - ((xB - x0) / (Y(xB) - Y(x0)) * Y(x0);
+                passaggi[2]++;
+            }
+            return x1;
         }
     }
 }
