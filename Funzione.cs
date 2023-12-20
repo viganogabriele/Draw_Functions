@@ -27,7 +27,7 @@ namespace DisegnoFunzione
         public double Bisezione(double xA, double xB, double epsilon)
         {
             double m = (xA + xB) / 2;
-            while (Math.Abs(Y(m)) < epsilon)
+            while (Trovato(xA, xB, epsilon) == true)
             {
                 m = (xA + xB) / 2;
                 if (Y(m) > 0)
