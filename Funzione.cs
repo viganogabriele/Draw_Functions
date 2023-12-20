@@ -9,20 +9,24 @@ namespace DisegnoFunzione
 {
     internal class Funzione
     {
-        public float y;
-        public List <float> passaggi = new List <float>();
+        public double y;
+        public List <double> passaggi = new List <double>();
         public Funzione() 
         {
         }
         // y = x*5 - 2
-        public float Y (float x)
+        public double Y (double x)
         {
             y = x * 5 - 2; // Funzione
             return y;
         }
-        public float Bisezione(float xA, float xB, float epsilon)
+        public bool Trovato(double xA, double xB, double epsilon)
         {
-            float m = (xA + xB) / 2;
+            return (xB - xA) < epsilon;
+        }
+        public double Bisezione(double xA, double xB, double epsilon)
+        {
+            double m = (xA + xB) / 2;
             while (Math.Abs(Y(m)) < epsilon)
             {
                 m = (xA + xB) / 2;
@@ -38,7 +42,7 @@ namespace DisegnoFunzione
             }  
             return m;
         }
-        public float Tangente(float xA, float xB, float epsilon)
+        public double Tangente(double xA, double xB, double epsilon)
         {
 
         }

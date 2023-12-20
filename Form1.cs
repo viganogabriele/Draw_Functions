@@ -13,9 +13,9 @@ namespace DisegnoFunzione
     public partial class Form1 : Form
     {
         bool continua = false;
-        float xA;
-        float xB;
-        float epsilon;
+        double xA;
+        double xB;
+        double epsilon;
         Funzione f = new Funzione();
         public Form1()
         {
@@ -30,15 +30,15 @@ namespace DisegnoFunzione
         private void btnZeri_Click(object sender, EventArgs e)
         {
             // Controllare che f sia continua o lo do per scontato
-            if (!float.TryParse(txtXa.Text, out xA))
+            if (!double.TryParse(txtXa.Text, out xA))
             {
                 MessageBox.Show("Input non valido");
             }
-            if (!float.TryParse(txtXa.Text, out xA))
+            if (!double.TryParse(txtXa.Text, out xA))
             {
                 MessageBox.Show("Input non valido");
             }
-            if (!float.TryParse(txtXa.Text, out epsilon))
+            if (!double.TryParse(txtXa.Text, out epsilon))
             {
                 MessageBox.Show("Input non valido");
             }
@@ -47,7 +47,7 @@ namespace DisegnoFunzione
                 continua = true;
                 if(f.Y(xA) > f.Y(xB))
                 {
-                    float temp = xB;
+                    double temp = xB;
                     xB = xA;
                     xA = temp;
                 }
