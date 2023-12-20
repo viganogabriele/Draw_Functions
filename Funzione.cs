@@ -38,5 +38,9 @@ namespace DisegnoFunzione
             }  
             return m;
         }
+        public float Tangente(float xA, float xB, float epsilon)
+        {
+
+        }
     }
 }
