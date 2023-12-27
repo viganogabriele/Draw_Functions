@@ -11,15 +11,15 @@ namespace DisegnoFunzione
     {
         public double y;
         public List <double> passaggi = new List <double>() {0, 0, 0};
+        public List<double> zeri = new List<double> { 0.0, 0.0, 0.0};
         public Funzione() 
         {
         }
         public double Y (double x)
         {
-            y = Math.Pow(x, 2) - 4; // Funzione
+            y = x*x - 4; // Funzione
             return y;
         }
-        public List <double> zeri = new List <double>();
         public bool Trovato(double xA, double xB, double epsilon)
         {
             return Math.Abs(xB - xA) < epsilon;

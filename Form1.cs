@@ -35,12 +35,12 @@ namespace DisegnoFunzione
                 stop = true;
                 MessageBox.Show("Input non valido per xA");
             }
-            if (!double.TryParse(txtXa.Text, out xB))
+            if (!double.TryParse(txtXb.Text, out xB))
             {
                 stop = true;
                 MessageBox.Show("Input non valido per xB");
             }
-            if (!double.TryParse(txtXa.Text, out epsilon))
+            if (!double.TryParse(txtEpsilon.Text, out epsilon))
             {
                 stop = true;
                 MessageBox.Show("Input non valido per epsilon");
