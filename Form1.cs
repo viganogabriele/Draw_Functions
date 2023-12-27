@@ -34,7 +34,7 @@ namespace DisegnoFunzione
             {
                 MessageBox.Show("Input non valido");
             }
-            if (!double.TryParse(txtXa.Text, out xA))
+            if (!double.TryParse(txtXa.Text, out xB))
             {
                 MessageBox.Show("Input non valido");
             }
@@ -62,8 +62,6 @@ namespace DisegnoFunzione
             {
                 MessageBox.Show("La funzione non presenta uno zero!");
             }
-
-
         }
     }
 }
