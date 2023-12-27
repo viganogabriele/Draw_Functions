@@ -12,10 +12,10 @@ namespace DisegnoFunzione
 {
     public partial class Form1 : Form
     {
-        bool continua = false;
         double xA;
         double xB;
         double epsilon;
+        bool stop = false;
         Funzione f = new Funzione();
         public Form1()
         {
@@ -32,36 +32,41 @@ namespace DisegnoFunzione
             // Controllare che f sia continua o lo do per scontato
             if (!double.TryParse(txtXa.Text, out xA))
             {
-                MessageBox.Show("Input non valido");
+                stop = true;
+                MessageBox.Show("Input non valido per xA");
             }
             if (!double.TryParse(txtXa.Text, out xB))
             {
-                MessageBox.Show("Input non valido");
+                stop = true;
+                MessageBox.Show("Input non valido per xB");
             }
             if (!double.TryParse(txtXa.Text, out epsilon))
             {
-                MessageBox.Show("Input non valido");
+                stop = true;
+                MessageBox.Show("Input non valido per epsilon");
             }
-            if (f.Y(xA) * f.Y(xB) < 0)
+            if(stop == false)
             {
-                continua = true;
-                if(f.Y(xA) > f.Y(xB))
+                if (f.Y(xA) * f.Y(xB) < 0)
                 {
-                    double temp = xB;
-                    xB = xA;
-                    xA = temp;
+                    if (f.Y(xA) > f.Y(xB))
+                    {
+                        double temp = xB;
+                        xB = xA;
+                        xA = temp;
+                    }
+                    f.zeri[0] = f.Bisezione(xA, xB, epsilon);
+                    f.zeri[1] = f.Tangente(xA, xB, epsilon);
+                    f.zeri[2] = f.Secante(xA, xB, epsilon);
+                    lbl0.Text = f.zeri[0].ToString();
+                    lbl1.Text = f.zeri[1].ToString();
+                    lbl2.Text = f.zeri[2].ToString();
                 }
-                f.zeri[0] = f.Bisezione(xA, xB, epsilon);
-                f.zeri[1] = f.Tangente(xA, xB, epsilon);
-                f.zeri[2] = f.Secante(xA, xB, epsilon);
-                lbl0.Text = f.zeri[0].ToString();
-                lbl1.Text = f.zeri[1].ToString();
-                lbl2.Text = f.zeri[2].ToString();
-            }
-            else
-            {
-                MessageBox.Show("La funzione non presenta uno zero!");
-            }
+                else
+                {
+                    MessageBox.Show("La funzione non presenta uno zero!");
+                }
+            }                  
         }
     }
 }
