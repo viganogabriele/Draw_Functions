@@ -10,7 +10,7 @@ namespace DisegnoFunzione
     internal class Funzione
     {
         public double y;
-        public List <double> passaggi = new List <double>();
+        public List <double> passaggi = new List <double>() {0, 0, 0};
         public Funzione() 
         {
         }
@@ -44,7 +44,7 @@ namespace DisegnoFunzione
         }
         public double Tangente(double xA, double xB, double epsilon)
         {
-            double x0;
+            double x0 = xB;
             double x1 = xA;
             double m;
             double q;
@@ -62,10 +62,15 @@ namespace DisegnoFunzione
         public double Secante(double xA, double xB, double epsilon)
         {
             double x0 = xA;
-            double x1; 
-            while (Trovato(x0, x1, epsilon) == true || passaggi[1] > 1000)
+            double x1 = xB;
+            while (Trovato(x0, x1, epsilon) == false || passaggi[2] < 1000)
             {
-                x1 = x0 - ((xB - x0) / (Y(xB) - Y(x0)) * Y(x0);
+                x0 = x1;
+                if (passaggi[2] == 0)
+                {
+                    x0 = xA;
+                }
+                x1 = x0 - ((xB - x0) / (Y(xB) - Y(x0)) * Y(x0));
                 passaggi[2]++;
             }
             return x1;
