@@ -21,7 +21,6 @@ namespace DisegnoFunzione
             return y;
         }
         public List <double> zeri = new List <double>();
-
         public bool Trovato(double xA, double xB, double epsilon)
         {
             return Math.Abs(xB - xA) < epsilon;

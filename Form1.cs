@@ -51,6 +51,9 @@ namespace DisegnoFunzione
                     xB = xA;
                     xA = temp;
                 }
+                f.zeri[0] = f.Bisezione(xA, xB, epsilon);
+                f.zeri[1] = f.Tangente(xA, xB, epsilon);
+                f.zeri[2] = f.Secante(xA, xB, epsilon);
             }
             else
             {
