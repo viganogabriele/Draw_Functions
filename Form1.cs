@@ -54,6 +54,9 @@ namespace DisegnoFunzione
                 f.zeri[0] = f.Bisezione(xA, xB, epsilon);
                 f.zeri[1] = f.Tangente(xA, xB, epsilon);
                 f.zeri[2] = f.Secante(xA, xB, epsilon);
+                lbl0.Text = f.zeri[0].ToString();
+                lbl1.Text = f.zeri[1].ToString();
+                lbl2.Text = f.zeri[2].ToString();
             }
             else
             {

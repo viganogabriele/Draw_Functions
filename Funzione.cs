@@ -14,10 +14,9 @@ namespace DisegnoFunzione
         public Funzione() 
         {
         }
-        // y = x*5 - 2
         public double Y (double x)
         {
-            y = x * 5 - 2; // Funzione
+            y = Math.Pow(x, 2) - 4; // Funzione
             return y;
         }
         public List <double> zeri = new List <double>();

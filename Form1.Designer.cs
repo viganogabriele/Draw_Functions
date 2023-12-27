@@ -32,6 +32,9 @@
             this.txtXb = new System.Windows.Forms.TextBox();
             this.btnZeri = new System.Windows.Forms.Button();
             this.txtEpsilon = new System.Windows.Forms.TextBox();
+            this.lbl0 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtXa
@@ -65,11 +68,41 @@
             this.txtEpsilon.Size = new System.Drawing.Size(72, 20);
             this.txtEpsilon.TabIndex = 3;
             // 
+            // lbl0
+            // 
+            this.lbl0.AutoSize = true;
+            this.lbl0.Location = new System.Drawing.Point(666, 202);
+            this.lbl0.Name = "lbl0";
+            this.lbl0.Size = new System.Drawing.Size(77, 13);
+            this.lbl0.TabIndex = 4;
+            this.lbl0.Text = "Zero Bisezione";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(666, 233);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(78, 13);
+            this.lbl1.TabIndex = 5;
+            this.lbl1.Text = "Zero Tangente";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(666, 263);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(72, 13);
+            this.lbl2.TabIndex = 6;
+            this.lbl2.Text = "Zero Secante";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.lbl0);
             this.Controls.Add(this.txtEpsilon);
             this.Controls.Add(this.btnZeri);
             this.Controls.Add(this.txtXb);
@@ -88,6 +121,9 @@
         private System.Windows.Forms.TextBox txtXb;
         private System.Windows.Forms.Button btnZeri;
         private System.Windows.Forms.TextBox txtEpsilon;
+        private System.Windows.Forms.Label lbl0;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
     }
 }
 
