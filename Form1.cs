@@ -30,22 +30,12 @@ namespace DisegnoFunzione
         private void btnZeri_Click(object sender, EventArgs e)
         {
             // Controllare che f sia continua o lo do per scontato
-            if (!double.TryParse(txtXa.Text, out xA))
+            if (!double.TryParse(txtXa.Text, out xA) || !double.TryParse(txtXb.Text, out xB) || !double.TryParse(txtEpsilon.Text, out epsilon))
             {
                 stop = true;
-                MessageBox.Show("Input non valido per xA");
+                MessageBox.Show("Input non valido");
             }
-            if (!double.TryParse(txtXb.Text, out xB))
-            {
-                stop = true;
-                MessageBox.Show("Input non valido per xB");
-            }
-            if (!double.TryParse(txtEpsilon.Text, out epsilon))
-            {
-                stop = true;
-                MessageBox.Show("Input non valido per epsilon");
-            }
-            if(stop == false)
+            if (stop == false)
             {
                 if (f.Y(xA) * f.Y(xB) < 0)
                 {
