@@ -14,6 +14,7 @@ namespace DisegnoFunzione
         public double y;
         public List <double> passaggi = new List <double>() {0, 0, 0};
         public List<double> zeri = new List<double> { 0.0, 0.0, 0.0};
+        public int maxPassaggi = 15;
         public Funzione() 
         {
         }
@@ -24,12 +25,12 @@ namespace DisegnoFunzione
         }
         public bool Trovato(double xA, double xB, double epsilon)
         {
-            return Math.Abs(xB - xA) < epsilon;
+            return Math.Abs(xB - xA) >= epsilon;
         }
         public double Bisezione(double xA, double xB, double epsilon)
         {
             double m = (xA + xB) / 2;
-            while (Trovato(xA, xB, epsilon) == false || passaggi[0] < 100)
+            while (Trovato(xA, xB, epsilon) == true || passaggi[0] < maxPassaggi)
             {
                 if (m > xA)
                 {
@@ -51,7 +52,7 @@ namespace DisegnoFunzione
             double m;
             double q;
             double h = 0.00000000000001;
-            while (Trovato(x0, x1, epsilon) == false || passaggi[1] < 100)
+            while (Trovato(x0, x1, epsilon) == false || passaggi[1] < maxPassaggi)
             {
                 x0 = x1;
                 m = (Y(x0) - Y(x0+h)) / h;
@@ -65,7 +66,7 @@ namespace DisegnoFunzione
         {
             double x0 = xA;
             double x1 = xB;
-            while (Trovato(x0, x1, epsilon) == false || passaggi[2] < 100)
+            while (Trovato(x0, x1, epsilon) == false || passaggi[2] < maxPassaggi)
             {
                 x0 = x1;
                 if (passaggi[2] == 0)
