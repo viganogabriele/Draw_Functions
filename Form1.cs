@@ -60,15 +60,16 @@ namespace DisegnoFunzione
         {
             float centroX = pictureBox.Width / 2;
             float centroY = pictureBox.Height / 2;
+            float scala = 10.0f;
             using (Graphics g = pictureBox.CreateGraphics())
             {
                 g.Clear(Color.White); // Cancella il contenuto precedente
-                Pen pen = new Pen(Color.Blue);
-                for (int i = 0; i < pictureBox.Width; i++)
+                Pen pen = new Pen(Color.Black);
+                for (int i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i++)
                 {
-                    double x = i * 0.1; // Trovare la giusta scala
+                    double x = i / scala; // Adatta la scala
                     double y = f.Y(x);
-                    g.DrawEllipse(pen, (float)x + centroX, (float)y + centroY, 1, 1);
+                    g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
                 }
             }
         }
