@@ -35,25 +35,28 @@
             this.lbl0 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
+            this.btnDisegna = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // txtXa
             // 
-            this.txtXa.Location = new System.Drawing.Point(597, 74);
+            this.txtXa.Location = new System.Drawing.Point(582, 76);
             this.txtXa.Name = "txtXa";
             this.txtXa.Size = new System.Drawing.Size(72, 20);
             this.txtXa.TabIndex = 0;
             // 
             // txtXb
             // 
-            this.txtXb.Location = new System.Drawing.Point(699, 74);
+            this.txtXb.Location = new System.Drawing.Point(684, 76);
             this.txtXb.Name = "txtXb";
             this.txtXb.Size = new System.Drawing.Size(72, 20);
             this.txtXb.TabIndex = 1;
             // 
             // btnZeri
             // 
-            this.btnZeri.Location = new System.Drawing.Point(623, 138);
+            this.btnZeri.Location = new System.Drawing.Point(608, 223);
             this.btnZeri.Name = "btnZeri";
             this.btnZeri.Size = new System.Drawing.Size(122, 23);
             this.btnZeri.TabIndex = 2;
@@ -63,7 +66,7 @@
             // 
             // txtEpsilon
             // 
-            this.txtEpsilon.Location = new System.Drawing.Point(649, 100);
+            this.txtEpsilon.Location = new System.Drawing.Point(634, 102);
             this.txtEpsilon.Name = "txtEpsilon";
             this.txtEpsilon.Size = new System.Drawing.Size(72, 20);
             this.txtEpsilon.TabIndex = 3;
@@ -71,7 +74,7 @@
             // lbl0
             // 
             this.lbl0.AutoSize = true;
-            this.lbl0.Location = new System.Drawing.Point(666, 202);
+            this.lbl0.Location = new System.Drawing.Point(631, 276);
             this.lbl0.Name = "lbl0";
             this.lbl0.Size = new System.Drawing.Size(77, 13);
             this.lbl0.TabIndex = 4;
@@ -80,7 +83,7 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(666, 233);
+            this.lbl1.Location = new System.Drawing.Point(631, 307);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(78, 13);
             this.lbl1.TabIndex = 5;
@@ -89,17 +92,37 @@
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(666, 263);
+            this.lbl2.Location = new System.Drawing.Point(631, 337);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(72, 13);
             this.lbl2.TabIndex = 6;
             this.lbl2.Text = "Zero Secante";
+            // 
+            // btnDisegna
+            // 
+            this.btnDisegna.Location = new System.Drawing.Point(608, 167);
+            this.btnDisegna.Name = "btnDisegna";
+            this.btnDisegna.Size = new System.Drawing.Size(122, 23);
+            this.btnDisegna.TabIndex = 7;
+            this.btnDisegna.Text = "Disegna funzione";
+            this.btnDisegna.UseVisualStyleBackColor = true;
+            this.btnDisegna.Click += new System.EventHandler(this.btnDisegna_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(57, 48);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(460, 350);
+            this.pictureBox.TabIndex = 8;
+            this.pictureBox.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.btnDisegna);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl0);
@@ -110,6 +133,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,6 +148,8 @@
         private System.Windows.Forms.Label lbl0;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Button btnDisegna;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 

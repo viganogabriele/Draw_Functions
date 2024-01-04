@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace DisegnoFunzione
 {
@@ -21,12 +22,9 @@ namespace DisegnoFunzione
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
-
         private void btnZeri_Click(object sender, EventArgs e)
         {
             // Controllare che f sia continua o lo do per scontato
@@ -56,7 +54,23 @@ namespace DisegnoFunzione
                 {
                     MessageBox.Show("La funzione non presenta uno zero!");
                 }
-            }                  
+            }
+        }
+        private void btnDisegna_Click(object sender, EventArgs e)
+        {
+            float centroX = pictureBox.Width / 2;
+            float centroY = pictureBox.Height / 2;
+            using (Graphics g = pictureBox.CreateGraphics())
+            {
+                g.Clear(Color.White); // Cancella il contenuto precedente
+                Pen pen = new Pen(Color.Blue);
+                for (int i = 0; i < pictureBox.Width; i++)
+                {
+                    double x = i * 0.1; // Trovare la giusta scala
+                    double y = f.Y(x);
+                    g.DrawEllipse(pen, (float)x + centroX, (float)y + centroY, 1, 1);
+                }
+            }
         }
     }
 }
