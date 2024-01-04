@@ -58,20 +58,7 @@ namespace DisegnoFunzione
         }
         private void btnDisegna_Click(object sender, EventArgs e)
         {
-            float centroX = pictureBox.Width / 2;
-            float centroY = pictureBox.Height / 2;
-            float scala = 40.0f;
-            using (Graphics g = pictureBox.CreateGraphics())
-            {
-                g.Clear(Color.White); // Cancella il contenuto precedente
-                Pen pen = new Pen(Color.Black);
-                for (int i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i++)
-                {
-                    double x = i / scala; // Adatta la scala
-                    double y = f.Y(x);
-                    g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
-                }
-            }
+            f.Disegna(pictureBox);
         }
     }
 }

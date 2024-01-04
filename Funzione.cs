@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace DisegnoFunzione
@@ -17,7 +19,7 @@ namespace DisegnoFunzione
         }
         public double Y (double x)
         {
-            y = Math.Sin(x); // Funzione
+            y = x*x - 4; // Funzione
             return y;
         }
         public bool Trovato(double xA, double xB, double epsilon)
@@ -74,6 +76,23 @@ namespace DisegnoFunzione
                 passaggi[2]++;
             }
             return x1;
+        }
+        public void Disegna(PictureBox pictureBox)
+        {
+            float centroX = pictureBox.Width / 2;
+            float centroY = pictureBox.Height / 2;
+            float scala = 20f;
+            using (Graphics g = pictureBox.CreateGraphics())
+            {
+                g.Clear(Color.White); // Cancella il contenuto precedente
+                Pen pen = new Pen(Color.Black);
+                for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
+                {
+                    double x = i / scala; // Adatta la scala
+                    double y = Y(x);
+                    g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
+                }
+            }
         }
     }
 }
