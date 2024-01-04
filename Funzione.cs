@@ -17,7 +17,7 @@ namespace DisegnoFunzione
         }
         public double Y (double x)
         {
-            y = x*x - 4; // Funzione
+            y = Math.Sin(x); // Funzione
             return y;
         }
         public bool Trovato(double xA, double xB, double epsilon)

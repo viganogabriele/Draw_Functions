@@ -60,7 +60,7 @@ namespace DisegnoFunzione
         {
             float centroX = pictureBox.Width / 2;
             float centroY = pictureBox.Height / 2;
-            float scala = 10.0f;
+            float scala = 40.0f;
             using (Graphics g = pictureBox.CreateGraphics())
             {
                 g.Clear(Color.White); // Cancella il contenuto precedente
