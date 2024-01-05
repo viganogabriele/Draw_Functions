@@ -14,7 +14,7 @@ namespace DisegnoFunzione
         public double y;
         public List <double> passaggi = new List <double>() {0, 0, 0};
         public List<double> zeri = new List<double> { 0.0, 0.0, 0.0};
-        public int maxPassaggi = 15;
+        public int maxPassaggi = 10;
         public Funzione() 
         {
         }
@@ -30,7 +30,7 @@ namespace DisegnoFunzione
         public double Bisezione(double xA, double xB, double epsilon)
         {
             double m = (xA + xB) / 2;
-            while (Trovato(xA, xB, epsilon) == true || passaggi[0] < maxPassaggi)
+            do
             {
                 if (m > xA)
                 {
@@ -42,7 +42,7 @@ namespace DisegnoFunzione
                 }
                 m = (xA + xB) / 2;
                 passaggi[0]++;
-            }  
+            } while (Math.Abs(xB - xA) >= epsilon || passaggi[0] < maxPassaggi);
             return m;
         }
         public double Tangente(double xA, double xB, double epsilon)
