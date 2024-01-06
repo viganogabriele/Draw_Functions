@@ -42,15 +42,22 @@ namespace DisegnoFunzione
                         xB = xA;
                         xA = temp;
                     }
+                    f.passaggi[0] = 0;
+                    f.passaggi[1] = 0;
+                    f.passaggi[2] = 0;
                     f.zeri[0] = f.Bisezione(xA, xB, epsilon);
+                    lblBisezione.Text = f.zeri[0].ToString();
+                    lblPassaggiB.Text = f.passaggi[0].ToString();
+                    /*
                     f.zeri[1] = f.Tangente(xA, xB, epsilon);
                     f.zeri[2] = f.Secante(xA, xB, epsilon);    
-                    lblBisezione.Text = f.zeri[0].ToString();
+                    
                     lblTangente.Text = f.zeri[1].ToString();
                     lblSecante.Text = f.zeri[2].ToString();
-                    lblPassaggiB.Text = f.passaggi[0].ToString();
+                    
                     lblPassaggiT.Text = f.passaggi[0].ToString();
                     lblPassaggiS.Text = f.passaggi[0].ToString();
+                    */
                 }
                 else
                 {
