@@ -32,11 +32,14 @@
             this.txtXb = new System.Windows.Forms.TextBox();
             this.btnZeri = new System.Windows.Forms.Button();
             this.txtEpsilon = new System.Windows.Forms.TextBox();
-            this.lbl0 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
+            this.lblBisezione = new System.Windows.Forms.Label();
+            this.lblTangente = new System.Windows.Forms.Label();
+            this.lblSecante = new System.Windows.Forms.Label();
             this.btnDisegna = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.lblPassaggiB = new System.Windows.Forms.Label();
+            this.lblPassaggiT = new System.Windows.Forms.Label();
+            this.lblPassaggiS = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,32 +74,32 @@
             this.txtEpsilon.Size = new System.Drawing.Size(72, 20);
             this.txtEpsilon.TabIndex = 3;
             // 
-            // lbl0
+            // lblBisezione
             // 
-            this.lbl0.AutoSize = true;
-            this.lbl0.Location = new System.Drawing.Point(631, 276);
-            this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(77, 13);
-            this.lbl0.TabIndex = 4;
-            this.lbl0.Text = "Zero Bisezione";
+            this.lblBisezione.AutoSize = true;
+            this.lblBisezione.Location = new System.Drawing.Point(605, 274);
+            this.lblBisezione.Name = "lblBisezione";
+            this.lblBisezione.Size = new System.Drawing.Size(77, 13);
+            this.lblBisezione.TabIndex = 4;
+            this.lblBisezione.Text = "Zero Bisezione";
             // 
-            // lbl1
+            // lblTangente
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(631, 307);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(78, 13);
-            this.lbl1.TabIndex = 5;
-            this.lbl1.Text = "Zero Tangente";
+            this.lblTangente.AutoSize = true;
+            this.lblTangente.Location = new System.Drawing.Point(605, 305);
+            this.lblTangente.Name = "lblTangente";
+            this.lblTangente.Size = new System.Drawing.Size(78, 13);
+            this.lblTangente.TabIndex = 5;
+            this.lblTangente.Text = "Zero Tangente";
             // 
-            // lbl2
+            // lblSecante
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(631, 337);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(72, 13);
-            this.lbl2.TabIndex = 6;
-            this.lbl2.Text = "Zero Secante";
+            this.lblSecante.AutoSize = true;
+            this.lblSecante.Location = new System.Drawing.Point(605, 337);
+            this.lblSecante.Name = "lblSecante";
+            this.lblSecante.Size = new System.Drawing.Size(72, 13);
+            this.lblSecante.TabIndex = 6;
+            this.lblSecante.Text = "Zero Secante";
             // 
             // btnDisegna
             // 
@@ -117,16 +120,46 @@
             this.pictureBox.TabIndex = 8;
             this.pictureBox.TabStop = false;
             // 
+            // lblPassaggiB
+            // 
+            this.lblPassaggiB.AutoSize = true;
+            this.lblPassaggiB.Location = new System.Drawing.Point(688, 274);
+            this.lblPassaggiB.Name = "lblPassaggiB";
+            this.lblPassaggiB.Size = new System.Drawing.Size(50, 13);
+            this.lblPassaggiB.TabIndex = 9;
+            this.lblPassaggiB.Text = "Passaggi";
+            // 
+            // lblPassaggiT
+            // 
+            this.lblPassaggiT.AutoSize = true;
+            this.lblPassaggiT.Location = new System.Drawing.Point(688, 305);
+            this.lblPassaggiT.Name = "lblPassaggiT";
+            this.lblPassaggiT.Size = new System.Drawing.Size(50, 13);
+            this.lblPassaggiT.TabIndex = 10;
+            this.lblPassaggiT.Text = "Passaggi";
+            // 
+            // lblPassaggiS
+            // 
+            this.lblPassaggiS.AutoSize = true;
+            this.lblPassaggiS.Location = new System.Drawing.Point(688, 337);
+            this.lblPassaggiS.Name = "lblPassaggiS";
+            this.lblPassaggiS.Size = new System.Drawing.Size(50, 13);
+            this.lblPassaggiS.TabIndex = 11;
+            this.lblPassaggiS.Text = "Passaggi";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPassaggiS);
+            this.Controls.Add(this.lblPassaggiT);
+            this.Controls.Add(this.lblPassaggiB);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnDisegna);
-            this.Controls.Add(this.lbl2);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.lbl0);
+            this.Controls.Add(this.lblSecante);
+            this.Controls.Add(this.lblTangente);
+            this.Controls.Add(this.lblBisezione);
             this.Controls.Add(this.txtEpsilon);
             this.Controls.Add(this.btnZeri);
             this.Controls.Add(this.txtXb);
@@ -146,11 +179,14 @@
         private System.Windows.Forms.TextBox txtXb;
         private System.Windows.Forms.Button btnZeri;
         private System.Windows.Forms.TextBox txtEpsilon;
-        private System.Windows.Forms.Label lbl0;
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lblBisezione;
+        private System.Windows.Forms.Label lblTangente;
+        private System.Windows.Forms.Label lblSecante;
         private System.Windows.Forms.Button btnDisegna;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label lblPassaggiB;
+        private System.Windows.Forms.Label lblPassaggiT;
+        private System.Windows.Forms.Label lblPassaggiS;
     }
 }
 

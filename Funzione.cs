@@ -56,7 +56,7 @@ namespace DisegnoFunzione
             double m;
             double q;
             double h = 0.00000000000001;
-            while (Trovato(x0, x1, epsilon) == false || passaggi[1] < maxPassaggi)
+            while (Math.Abs(xB - xA) >= epsilon || passaggi[1] < maxPassaggi)
             {
                 x0 = x1;
                 m = (Y(x0) - Y(x0+h)) / h;
@@ -70,7 +70,7 @@ namespace DisegnoFunzione
         {
             double x0 = xA;
             double x1 = xB;
-            while (Trovato(x0, x1, epsilon) == false || passaggi[2] < maxPassaggi)
+            while (Math.Abs(xB - xA) >= epsilon || passaggi[2] < maxPassaggi)
             {
                 x0 = x1;
                 if (passaggi[2] == 0)
