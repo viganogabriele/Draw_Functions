@@ -27,32 +27,33 @@ namespace DisegnoFunzione
         }
         private void btnZeri_Click(object sender, EventArgs e)
         {
-            // Controllare che f sia continua o lo do per scontato
             if (!double.TryParse(txtXa.Text, out xA) || !double.TryParse(txtXb.Text, out xB) || !double.TryParse(txtEpsilon.Text, out epsilon))
             {
                 stop = true;
                 MessageBox.Show("Input non valido");
-            }
+            } 
             if (stop == false)
             {
                 if (f.Y(xA) * f.Y(xB) < 0)
                 {
-                    if (f.Y(xA) > f.Y(xB))
+                    if (xB > xA)
                     {
                         double temp = xB;
                         xB = xA;
                         xA = temp;
                     }
                     f.zeri[0] = f.Bisezione(xA, xB, epsilon);
-                    lbl0.Text = "Fatto";
+                    lbl0.Text = f.zeri[0].ToString();
+                    /*
                     f.zeri[1] = f.Tangente(xA, xB, epsilon);
                     lbl1.Text = "Fatto";
                     f.zeri[2] = f.Secante(xA, xB, epsilon);
                     lbl2.Text = "Fatto";
-
+                    
                     lbl0.Text = f.zeri[0].ToString();
                     lbl1.Text = f.zeri[1].ToString();
                     lbl2.Text = f.zeri[2].ToString();
+                    */
                 }
                 else
                 {
