@@ -55,11 +55,11 @@ namespace DisegnoFunzione
             double x1 = xA;
             double m;
             double q;
-            double h = 0.00000000000001;
-            while (Math.Abs(xB - xA) >= epsilon && passaggi[1] < maxPassaggi)
+            double h = 0.0000000000001;
+            while (Math.Abs(x0 - x1) >= epsilon && passaggi[1] < maxPassaggi)
             {
                 x0 = x1;
-                m = (Y(x0) - Y(x0+h)) / h;
+                m = (Y(x0 + h) - Y(x0)) / h;
                 q = Y(x0) - m * x0;
                 x1 = - q / m;
                 passaggi[1]++;
