@@ -20,12 +20,8 @@ namespace DisegnoFunzione
         }
         public double Y (double x)
         {
-            y = x*x - 4; // Funzione
+            y = (x*x) - 4; // Funzione
             return y;
-        }
-        public bool Trovato(double xA, double xB, double epsilon)
-        {
-            return Math.Abs(xB - xA) >= epsilon;
         }
         public double Bisezione(double xA, double xB, double epsilon)
         {
@@ -58,7 +54,7 @@ namespace DisegnoFunzione
             double h = 0.0000000000001;
             while (Math.Abs(x0 - x1) >= epsilon && passaggi[1] < maxPassaggi)
             {
-                x0 = x1;
+                x0 = (x0 +x1) / 2;
                 m = (Y(x0 + h) - Y(x0)) / h;
                 q = Y(x0) - m * x0;
                 x1 = - q / m;
@@ -68,16 +64,12 @@ namespace DisegnoFunzione
         }
         public double Secante(double xA, double xB, double epsilon)
         {
-            double x0 = xA;
-            double x1 = xB;
-            while (Math.Abs(xB - xA) >= epsilon && passaggi[2] < maxPassaggi)
+            double x0 = xB;
+            double x1 = xA;
+            while (Math.Abs(x0 - x1) >= epsilon && passaggi[2] < maxPassaggi)
             {
                 x0 = x1;
-                if (passaggi[2] == 0)
-                {
-                    x0 = xA;
-                }
-                x1 = x0 - ((xB - x0) / (Y(xB) - Y(x0)) * Y(x0));
+                x1 = x0 - (((xB - x0) / (Y(xB) - Y(x0))) * Y(x0));
                 passaggi[2]++;
             }
             return x1;

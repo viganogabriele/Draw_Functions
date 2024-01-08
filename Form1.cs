@@ -42,26 +42,26 @@ namespace DisegnoFunzione
                         xB = xA;
                         xA = temp;
                     }
+                    // Riazzera i passaggi
                     f.passaggi[0] = 0;
                     f.passaggi[1] = 0;
                     f.passaggi[2] = 0;
+                    // Stampa Bisezione
                     f.zeri[0] = f.Bisezione(xA, xB, epsilon);
                     lblBisezione.Text = f.zeri[0].ToString();
                     lblPassaggiB.Text = f.passaggi[0].ToString();
-                     
+                    // Stampa Tangente
                     f.zeri[1] = f.Tangente(xA, xB, epsilon);
                     lblTangente.Text = f.zeri[1].ToString();
                     lblPassaggiT.Text = f.passaggi[1].ToString();
-
-                    /*
+                    // Stampa Secante
                     f.zeri[2] = f.Secante(xA, xB, epsilon);    
                     lblSecante.Text = f.zeri[2].ToString();
                     lblPassaggiS.Text = f.passaggi[2].ToString();
-                    */
                 }
                 else
                 {
-                    MessageBox.Show("La funzione non presenta uno zero!");
+                    MessageBox.Show("Non è valido il teorema di Bolzano, non è garantito uno zero!");
                 }
             }
         }
