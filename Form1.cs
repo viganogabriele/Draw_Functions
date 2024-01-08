@@ -48,15 +48,15 @@ namespace DisegnoFunzione
                     f.zeri[0] = f.Bisezione(xA, xB, epsilon);
                     lblBisezione.Text = f.zeri[0].ToString();
                     lblPassaggiB.Text = f.passaggi[0].ToString();
-                    /*
+                     
                     f.zeri[1] = f.Tangente(xA, xB, epsilon);
-                    f.zeri[2] = f.Secante(xA, xB, epsilon);    
-                    
                     lblTangente.Text = f.zeri[1].ToString();
+                    lblPassaggiT.Text = f.passaggi[1].ToString();
+
+                    /*
+                    f.zeri[2] = f.Secante(xA, xB, epsilon);    
                     lblSecante.Text = f.zeri[2].ToString();
-                    
-                    lblPassaggiT.Text = f.passaggi[0].ToString();
-                    lblPassaggiS.Text = f.passaggi[0].ToString();
+                    lblPassaggiS.Text = f.passaggi[2].ToString();
                     */
                 }
                 else
@@ -67,7 +67,7 @@ namespace DisegnoFunzione
         }
         private void btnDisegna_Click(object sender, EventArgs e)
         {
-            f.Disegna(pictureBox);
+            f.Disegna(pictureBox, g1, g2, g3);
         }
     }
 }

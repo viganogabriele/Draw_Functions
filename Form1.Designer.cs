@@ -43,9 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.g3 = new System.Windows.Forms.Label();
+            this.g1 = new System.Windows.Forms.Label();
+            this.g2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,41 +183,44 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Risultati";
             // 
-            // label4
+            // g3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 214);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(12, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "x";
+            this.g3.AutoSize = true;
+            this.g3.Location = new System.Drawing.Point(21, 214);
+            this.g3.Name = "g3";
+            this.g3.Size = new System.Drawing.Size(12, 13);
+            this.g3.TabIndex = 15;
+            this.g3.Text = "x";
+            this.g3.Visible = false;
             // 
-            // label5
+            // g1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(290, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "y";
+            this.g1.AutoSize = true;
+            this.g1.Location = new System.Drawing.Point(290, 9);
+            this.g1.Name = "g1";
+            this.g1.Size = new System.Drawing.Size(12, 13);
+            this.g1.TabIndex = 16;
+            this.g1.Text = "y";
+            this.g1.Visible = false;
             // 
-            // label6
+            // g2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(535, 214);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = ">";
+            this.g2.AutoSize = true;
+            this.g2.Location = new System.Drawing.Point(535, 214);
+            this.g2.Name = "g2";
+            this.g2.Size = new System.Drawing.Size(13, 13);
+            this.g2.TabIndex = 17;
+            this.g2.Text = ">";
+            this.g2.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.g2);
+            this.Controls.Add(this.g1);
+            this.Controls.Add(this.g3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -259,9 +262,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label g3;
+        private System.Windows.Forms.Label g1;
+        private System.Windows.Forms.Label g2;
     }
 }
 

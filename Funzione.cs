@@ -82,7 +82,7 @@ namespace DisegnoFunzione
             }
             return x1;
         }
-        public void Disegna(PictureBox pictureBox)
+        public void Disegna(PictureBox pictureBox, Label g1, Label g2, Label g3)
         {
             float centroX = pictureBox.Width / 2;
             float centroY = pictureBox.Height / 2;
@@ -93,6 +93,9 @@ namespace DisegnoFunzione
                 Pen pen = new Pen(Color.Black);
                 g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
                 g.DrawLine(pen, centroX, 0, centroX, pictureBox.Height);
+                g1.Visible = true;
+                g2.Visible = true;
+                g3.Visible = true;
                 for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
                 {
                     double x = i / scala; // Adatta la scala
