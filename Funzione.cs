@@ -91,6 +91,8 @@ namespace DisegnoFunzione
             {
                 g.Clear(Color.White); // Cancella il contenuto precedente
                 Pen pen = new Pen(Color.Black);
+                g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
+                g.DrawLine(pen, centroX, 0, centroX, pictureBox.Height);
                 for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
                 {
                     double x = i / scala; // Adatta la scala
