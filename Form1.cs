@@ -16,7 +16,6 @@ namespace DisegnoFunzione
         double xA;
         double xB;
         double epsilon;
-        bool stop = false;
         Funzione f = new Funzione();
         public Form1()
         {
@@ -27,12 +26,7 @@ namespace DisegnoFunzione
         }
         private void btnZeri_Click(object sender, EventArgs e)
         {
-            if (!double.TryParse(txtXa.Text, out xA) || !double.TryParse(txtXb.Text, out xB) || !double.TryParse(txtEpsilon.Text, out epsilon))
-            {
-                stop = true;
-                MessageBox.Show("Input non valido");
-            } 
-            if (stop == false)
+            if (double.TryParse(txtXa.Text, out xA) && double.TryParse(txtXb.Text, out xB) && double.TryParse(txtEpsilon.Text, out epsilon))
             {
                 if (f.Y(xA) * f.Y(xB) < 0)
                 {
@@ -42,7 +36,7 @@ namespace DisegnoFunzione
                         xB = xA;
                         xA = temp;
                     }
-                    // Riazzera i passaggi
+                    // Riazzera i passaggi al click
                     f.passaggi[0] = 0;
                     f.passaggi[1] = 0;
                     f.passaggi[2] = 0;
@@ -55,7 +49,7 @@ namespace DisegnoFunzione
                     lblTangente.Text = f.zeri[1].ToString();
                     lblPassaggiT.Text = f.passaggi[1].ToString();
                     // Stampa Secante
-                    f.zeri[2] = f.Secante(xA, xB, epsilon);    
+                    f.zeri[2] = f.Secante(xA, xB, epsilon);
                     lblSecante.Text = f.zeri[2].ToString();
                     lblPassaggiS.Text = f.passaggi[2].ToString();
                 }
@@ -63,6 +57,11 @@ namespace DisegnoFunzione
                 {
                     MessageBox.Show("Non è valido il teorema di Bolzano, non è garantito uno zero!");
                 }
+
+            }
+            else
+            {
+                MessageBox.Show("Input non valido");
             }
         }
         private void btnDisegna_Click(object sender, EventArgs e)
