@@ -14,6 +14,7 @@ namespace DisegnoFunzione
     public partial class Form1 : Form
     {
         Funzione f = new Funzione();
+        float scala = 20f;
         public Form1()
         {
             InitializeComponent();
@@ -69,13 +70,16 @@ namespace DisegnoFunzione
         }
         private void btnDisegna_Click(object sender, EventArgs e)
         {
+            Disegna();
+        }
+        private void Disegna ()
+        {
             float centroX = pictureBox.Width / 2;
             float centroY = pictureBox.Height / 2;
-            float scala = 20f;
             using (Graphics g = pictureBox.CreateGraphics())
             {
                 // Cancella il contenuto precedente
-                g.Clear(Color.White); 
+                g.Clear(Color.White);
                 Pen pen = new Pen(Color.Black);
                 // Disegna gli assi cartesiani
                 g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
@@ -84,6 +88,8 @@ namespace DisegnoFunzione
                 g1.Visible = true;
                 g2.Visible = true;
                 g3.Visible = true;
+                btnZoomIn.Visible = true;
+                btnZoomOut.Visible = true;
                 // Disegna la funzione
                 for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
                 {
@@ -92,6 +98,16 @@ namespace DisegnoFunzione
                     g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
                 }
             }
+        }
+        private void btnZoomIn_Click(object sender, EventArgs e)
+        {
+            scala += 10;
+            Disegna();
+        }
+        private void btnZoomOut_Click(object sender, EventArgs e)
+        {
+            scala -= 10;
+            Disegna();
         }
     }
 }

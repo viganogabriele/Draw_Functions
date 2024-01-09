@@ -46,6 +46,8 @@
             this.g3 = new System.Windows.Forms.Label();
             this.g1 = new System.Windows.Forms.Label();
             this.g2 = new System.Windows.Forms.Label();
+            this.btnZoomIn = new System.Windows.Forms.Button();
+            this.btnZoomOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,11 +215,35 @@
             this.g2.Text = ">";
             this.g2.Visible = false;
             // 
+            // btnZoomIn
+            // 
+            this.btnZoomIn.Location = new System.Drawing.Point(39, 416);
+            this.btnZoomIn.Name = "btnZoomIn";
+            this.btnZoomIn.Size = new System.Drawing.Size(250, 23);
+            this.btnZoomIn.TabIndex = 18;
+            this.btnZoomIn.Text = "+";
+            this.btnZoomIn.UseVisualStyleBackColor = true;
+            this.btnZoomIn.Visible = false;
+            this.btnZoomIn.Click += new System.EventHandler(this.btnZoomIn_Click);
+            // 
+            // btnZoomOut
+            // 
+            this.btnZoomOut.Location = new System.Drawing.Point(298, 416);
+            this.btnZoomOut.Name = "btnZoomOut";
+            this.btnZoomOut.Size = new System.Drawing.Size(250, 23);
+            this.btnZoomOut.TabIndex = 19;
+            this.btnZoomOut.Text = "-";
+            this.btnZoomOut.UseVisualStyleBackColor = true;
+            this.btnZoomOut.Visible = false;
+            this.btnZoomOut.Click += new System.EventHandler(this.btnZoomOut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(837, 466);
+            this.Controls.Add(this.btnZoomOut);
+            this.Controls.Add(this.btnZoomIn);
             this.Controls.Add(this.g2);
             this.Controls.Add(this.g1);
             this.Controls.Add(this.g3);
@@ -265,6 +291,8 @@
         private System.Windows.Forms.Label g3;
         private System.Windows.Forms.Label g1;
         private System.Windows.Forms.Label g2;
+        private System.Windows.Forms.Button btnZoomIn;
+        private System.Windows.Forms.Button btnZoomOut;
     }
 }
 
