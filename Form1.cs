@@ -13,9 +13,6 @@ namespace DisegnoFunzione
 {
     public partial class Form1 : Form
     {
-        double xA;
-        double xB;
-        double epsilon;
         Funzione f = new Funzione();
         public Form1()
         {
@@ -26,30 +23,37 @@ namespace DisegnoFunzione
         }
         private void btnZeri_Click(object sender, EventArgs e)
         {
-            if (double.TryParse(txtXa.Text, out xA) && double.TryParse(txtXb.Text, out xB) && double.TryParse(txtEpsilon.Text, out epsilon))
+            // Controllo input
+            if (f.Parse(txtXa, txtXb, txtEpsilon))
             {
-                if (f.Y(xA) * f.Y(xB) < 0)
+                // Verifica del teorema di Bolzano
+                if (f.Y(f.xA) * f.Y(f.xB) < 0) 
                 {
-                    if (xB > xA)
+                    // Assegnazione del valore più piccolo a xA
+                    if (f.xB > f.xA) 
                     {
-                        double temp = xB;
-                        xB = xA;
-                        xA = temp;
+                        double temp = f.xB;
+                        f.xB = f.xA;
+                        f.xA = temp;
                     }
+
                     // Riazzera i passaggi al click
                     f.passaggi[0] = 0;
                     f.passaggi[1] = 0;
                     f.passaggi[2] = 0;
+
                     // Stampa Bisezione
-                    f.zeri[0] = f.Bisezione(xA, xB, epsilon);
+                    f.zeri[0] = f.Bisezione();
                     lblBisezione.Text = f.zeri[0].ToString();
                     lblPassaggiB.Text = f.passaggi[0].ToString();
+
                     // Stampa Tangente
-                    f.zeri[1] = f.Tangente(xA, xB, epsilon);
+                    f.zeri[1] = f.Tangente();
                     lblTangente.Text = f.zeri[1].ToString();
                     lblPassaggiT.Text = f.passaggi[1].ToString();
+
                     // Stampa Secante
-                    f.zeri[2] = f.Secante(xA, xB, epsilon);
+                    f.zeri[2] = f.Secante();
                     lblSecante.Text = f.zeri[2].ToString();
                     lblPassaggiS.Text = f.passaggi[2].ToString();
                 }
@@ -57,16 +61,37 @@ namespace DisegnoFunzione
                 {
                     MessageBox.Show("Non è valido il teorema di Bolzano, non è garantito uno zero!");
                 }
-
             }
             else
             {
-                MessageBox.Show("Input non valido");
+                MessageBox.Show("Input inserito non valido");
             }
         }
         private void btnDisegna_Click(object sender, EventArgs e)
         {
-            f.Disegna(pictureBox, g1, g2, g3);
+            float centroX = pictureBox.Width / 2;
+            float centroY = pictureBox.Height / 2;
+            float scala = 20f;
+            using (Graphics g = pictureBox.CreateGraphics())
+            {
+                // Cancella il contenuto precedente
+                g.Clear(Color.White); 
+                Pen pen = new Pen(Color.Black);
+                // Disegna gli assi cartesiani
+                g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
+                g.DrawLine(pen, centroX, 0, centroX, pictureBox.Height);
+                // Rende visibili gli oggetti grafici
+                g1.Visible = true;
+                g2.Visible = true;
+                g3.Visible = true;
+                // Disegna la funzione
+                for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
+                {
+                    double x = i / scala;
+                    double y = f.Y(x);
+                    g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
+                }
+            }
         }
     }
 }

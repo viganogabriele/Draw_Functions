@@ -15,37 +15,46 @@ namespace DisegnoFunzione
         public List <double> passaggi = new List <double>() {0, 0, 0};
         public List<double> zeri = new List<double> { 0.0, 0.0, 0.0};
         public int maxPassaggi = 50;
+        public double xA;
+        public double xB;
+        public double epsilon;
         public Funzione() 
         {
         }
         public double Y (double x)
         {
-            y = (x*x) - 4; // Funzione
+            y = (x*x)-4; // Funzione
             return y;
         }
-        public double Bisezione(double xA, double xB, double epsilon)
+        public bool Parse(TextBox txtXa, TextBox txtXb, TextBox txtEpsilon) // Controllo Input
         {
+            return double.TryParse(txtXa.Text, out xA) && double.TryParse(txtXb.Text, out xB) && double.TryParse(txtEpsilon.Text, out epsilon);
+        }
+        public double Bisezione()
+        {
+            double x0 = xA;
+            double x1 = xB;
             double m = (xA + xB) / 2;
-            while (Math.Abs(xB - xA) >= epsilon && passaggi[0] < maxPassaggi)
+            while (Math.Abs(x0 - x1) >= epsilon && passaggi[0] < maxPassaggi)
             {
                 if (Y(m) < 0 && Y(xA) < 0)
                 {
-                    xA = m;
+                    x0 = m;
                 }
                 else if (Y(m) > 0 && Y(xA) > 0)
                 {
-                    xA = m;
+                    x0 = m;
                 }
                 else
                 {
-                    xB = m;
+                    x1 = m;
                 }
-                m = (xA + xB) / 2;
+                m = (x0 + x1) / 2;
                 passaggi[0]++;
             } 
             return m;
         }
-        public double Tangente(double xA, double xB, double epsilon)
+        public double Tangente()
         {
             double x0 = xB;
             double x1 = xA;
@@ -54,7 +63,11 @@ namespace DisegnoFunzione
             double h = 0.0000000000001;
             while (Math.Abs(x0 - x1) >= epsilon && passaggi[1] < maxPassaggi)
             {
-                x0 = (x0 +x1) / 2;
+                if (passaggi[1] == 0)
+                {
+                    x0 = (x0 + x1) / 2;
+                }
+                x0 = x1;
                 m = (Y(x0 + h) - Y(x0)) / h;
                 q = Y(x0) - m * x0;
                 x1 = - q / m;
@@ -62,7 +75,7 @@ namespace DisegnoFunzione
             }
             return x1;
         }
-        public double Secante(double xA, double xB, double epsilon)
+        public double Secante()
         {
             double x0 = xB;
             double x1 = xA;
@@ -73,28 +86,6 @@ namespace DisegnoFunzione
                 passaggi[2]++;
             }
             return x1;
-        }
-        public void Disegna(PictureBox pictureBox, Label g1, Label g2, Label g3)
-        {
-            float centroX = pictureBox.Width / 2;
-            float centroY = pictureBox.Height / 2;
-            float scala = 20f;
-            using (Graphics g = pictureBox.CreateGraphics())
-            {
-                g.Clear(Color.White); // Cancella il contenuto precedente
-                Pen pen = new Pen(Color.Black);
-                g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
-                g.DrawLine(pen, centroX, 0, centroX, pictureBox.Height);
-                g1.Visible = true;
-                g2.Visible = true;
-                g3.Visible = true;
-                for (double i = -pictureBox.Width / 2; i < pictureBox.Width / 2; i += 0.02)
-                {
-                    double x = i / scala; // Adatta la scala
-                    double y = Y(x);
-                    g.DrawEllipse(pen, (float)(x * scala) + centroX, (float)(-y * scala) + centroY, 1, 1);
-                }
-            }
         }
     }
 }
