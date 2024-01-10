@@ -85,9 +85,10 @@ namespace DisegnoFunzione
                 g.DrawLine(pen, 0, centroY, pictureBox.Width, centroY);
                 g.DrawLine(pen, centroX, 0, centroX, pictureBox.Height);
                 // Rende visibili gli oggetti grafici
-                g1.Visible = true;
-                g2.Visible = true;
-                g3.Visible = true;
+                lblY.Visible = true;
+                lblArrow.Visible = true;
+                lblX.Visible = true;
+                lblZoom.Visible = true;
                 btnZoomIn.Visible = true;
                 btnZoomOut.Visible = true;
                 // Disegna la funzione
@@ -101,12 +102,12 @@ namespace DisegnoFunzione
         }
         private void btnZoomIn_Click(object sender, EventArgs e)
         {
-            scala += 10;
+            scala *= 2;
             Disegna();
         }
         private void btnZoomOut_Click(object sender, EventArgs e)
         {
-            scala -= 10;
+            scala /= 2;
             Disegna();
         }
     }

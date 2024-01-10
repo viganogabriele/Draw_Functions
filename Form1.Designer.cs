@@ -43,11 +43,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.g3 = new System.Windows.Forms.Label();
-            this.g1 = new System.Windows.Forms.Label();
-            this.g2 = new System.Windows.Forms.Label();
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
+            this.lblArrow = new System.Windows.Forms.Label();
             this.btnZoomIn = new System.Windows.Forms.Button();
             this.btnZoomOut = new System.Windows.Forms.Button();
+            this.lblZoom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             // btnZeri
             // 
-            this.btnZeri.Location = new System.Drawing.Point(584, 233);
+            this.btnZeri.Location = new System.Drawing.Point(584, 148);
             this.btnZeri.Name = "btnZeri";
             this.btnZeri.Size = new System.Drawing.Size(165, 23);
             this.btnZeri.TabIndex = 2;
@@ -85,7 +86,7 @@
             // lblBisezione
             // 
             this.lblBisezione.AutoSize = true;
-            this.lblBisezione.Location = new System.Drawing.Point(581, 333);
+            this.lblBisezione.Location = new System.Drawing.Point(582, 221);
             this.lblBisezione.Name = "lblBisezione";
             this.lblBisezione.Size = new System.Drawing.Size(77, 13);
             this.lblBisezione.TabIndex = 4;
@@ -94,7 +95,7 @@
             // lblTangente
             // 
             this.lblTangente.AutoSize = true;
-            this.lblTangente.Location = new System.Drawing.Point(581, 364);
+            this.lblTangente.Location = new System.Drawing.Point(582, 252);
             this.lblTangente.Name = "lblTangente";
             this.lblTangente.Size = new System.Drawing.Size(78, 13);
             this.lblTangente.TabIndex = 5;
@@ -103,7 +104,7 @@
             // lblSecante
             // 
             this.lblSecante.AutoSize = true;
-            this.lblSecante.Location = new System.Drawing.Point(581, 396);
+            this.lblSecante.Location = new System.Drawing.Point(582, 284);
             this.lblSecante.Name = "lblSecante";
             this.lblSecante.Size = new System.Drawing.Size(72, 13);
             this.lblSecante.TabIndex = 6;
@@ -111,7 +112,7 @@
             // 
             // btnDisegna
             // 
-            this.btnDisegna.Location = new System.Drawing.Point(584, 177);
+            this.btnDisegna.Location = new System.Drawing.Point(584, 320);
             this.btnDisegna.Name = "btnDisegna";
             this.btnDisegna.Size = new System.Drawing.Size(165, 23);
             this.btnDisegna.TabIndex = 7;
@@ -131,7 +132,7 @@
             // lblPassaggiB
             // 
             this.lblPassaggiB.AutoSize = true;
-            this.lblPassaggiB.Location = new System.Drawing.Point(699, 333);
+            this.lblPassaggiB.Location = new System.Drawing.Point(700, 221);
             this.lblPassaggiB.Name = "lblPassaggiB";
             this.lblPassaggiB.Size = new System.Drawing.Size(50, 13);
             this.lblPassaggiB.TabIndex = 9;
@@ -140,7 +141,7 @@
             // lblPassaggiT
             // 
             this.lblPassaggiT.AutoSize = true;
-            this.lblPassaggiT.Location = new System.Drawing.Point(699, 364);
+            this.lblPassaggiT.Location = new System.Drawing.Point(700, 252);
             this.lblPassaggiT.Name = "lblPassaggiT";
             this.lblPassaggiT.Size = new System.Drawing.Size(50, 13);
             this.lblPassaggiT.TabIndex = 10;
@@ -149,7 +150,7 @@
             // lblPassaggiS
             // 
             this.lblPassaggiS.AutoSize = true;
-            this.lblPassaggiS.Location = new System.Drawing.Point(699, 396);
+            this.lblPassaggiS.Location = new System.Drawing.Point(700, 284);
             this.lblPassaggiS.Name = "lblPassaggiS";
             this.lblPassaggiS.Size = new System.Drawing.Size(50, 13);
             this.lblPassaggiS.TabIndex = 11;
@@ -179,47 +180,47 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(630, 290);
+            this.label3.Location = new System.Drawing.Point(630, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 24);
             this.label3.TabIndex = 14;
             this.label3.Text = "Risultati";
             // 
-            // g3
+            // lblX
             // 
-            this.g3.AutoSize = true;
-            this.g3.Location = new System.Drawing.Point(21, 214);
-            this.g3.Name = "g3";
-            this.g3.Size = new System.Drawing.Size(12, 13);
-            this.g3.TabIndex = 15;
-            this.g3.Text = "x";
-            this.g3.Visible = false;
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(21, 214);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(12, 13);
+            this.lblX.TabIndex = 15;
+            this.lblX.Text = "x";
+            this.lblX.Visible = false;
             // 
-            // g1
+            // lblY
             // 
-            this.g1.AutoSize = true;
-            this.g1.Location = new System.Drawing.Point(290, 9);
-            this.g1.Name = "g1";
-            this.g1.Size = new System.Drawing.Size(12, 13);
-            this.g1.TabIndex = 16;
-            this.g1.Text = "y";
-            this.g1.Visible = false;
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(290, 9);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(12, 13);
+            this.lblY.TabIndex = 16;
+            this.lblY.Text = "y";
+            this.lblY.Visible = false;
             // 
-            // g2
+            // lblArrow
             // 
-            this.g2.AutoSize = true;
-            this.g2.Location = new System.Drawing.Point(535, 214);
-            this.g2.Name = "g2";
-            this.g2.Size = new System.Drawing.Size(13, 13);
-            this.g2.TabIndex = 17;
-            this.g2.Text = ">";
-            this.g2.Visible = false;
+            this.lblArrow.AutoSize = true;
+            this.lblArrow.Location = new System.Drawing.Point(535, 214);
+            this.lblArrow.Name = "lblArrow";
+            this.lblArrow.Size = new System.Drawing.Size(13, 13);
+            this.lblArrow.TabIndex = 17;
+            this.lblArrow.Text = ">";
+            this.lblArrow.Visible = false;
             // 
             // btnZoomIn
             // 
-            this.btnZoomIn.Location = new System.Drawing.Point(39, 416);
+            this.btnZoomIn.Location = new System.Drawing.Point(579, 387);
             this.btnZoomIn.Name = "btnZoomIn";
-            this.btnZoomIn.Size = new System.Drawing.Size(250, 23);
+            this.btnZoomIn.Size = new System.Drawing.Size(80, 23);
             this.btnZoomIn.TabIndex = 18;
             this.btnZoomIn.Text = "+";
             this.btnZoomIn.UseVisualStyleBackColor = true;
@@ -228,25 +229,37 @@
             // 
             // btnZoomOut
             // 
-            this.btnZoomOut.Location = new System.Drawing.Point(298, 416);
+            this.btnZoomOut.Location = new System.Drawing.Point(664, 387);
             this.btnZoomOut.Name = "btnZoomOut";
-            this.btnZoomOut.Size = new System.Drawing.Size(250, 23);
+            this.btnZoomOut.Size = new System.Drawing.Size(80, 23);
             this.btnZoomOut.TabIndex = 19;
             this.btnZoomOut.Text = "-";
             this.btnZoomOut.UseVisualStyleBackColor = true;
             this.btnZoomOut.Visible = false;
             this.btnZoomOut.Click += new System.EventHandler(this.btnZoomOut_Click);
             // 
+            // lblZoom
+            // 
+            this.lblZoom.AutoSize = true;
+            this.lblZoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZoom.Location = new System.Drawing.Point(639, 355);
+            this.lblZoom.Name = "lblZoom";
+            this.lblZoom.Size = new System.Drawing.Size(50, 20);
+            this.lblZoom.TabIndex = 20;
+            this.lblZoom.Text = "Zoom";
+            this.lblZoom.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 466);
+            this.Controls.Add(this.lblZoom);
             this.Controls.Add(this.btnZoomOut);
             this.Controls.Add(this.btnZoomIn);
-            this.Controls.Add(this.g2);
-            this.Controls.Add(this.g1);
-            this.Controls.Add(this.g3);
+            this.Controls.Add(this.lblArrow);
+            this.Controls.Add(this.lblY);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,11 +301,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label g3;
-        private System.Windows.Forms.Label g1;
-        private System.Windows.Forms.Label g2;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.Label lblY;
+        private System.Windows.Forms.Label lblArrow;
         private System.Windows.Forms.Button btnZoomIn;
         private System.Windows.Forms.Button btnZoomOut;
+        private System.Windows.Forms.Label lblZoom;
     }
 }
 
